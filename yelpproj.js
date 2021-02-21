@@ -35,7 +35,8 @@ class Restaurant extends Location{
         super(id, name, location, hours);
         this.neighborhood = neighborhood;
         this.cuisine = cuisine;
-        this.delivers = delivers || 'No';
+		this.delivers = delivers || 'No';
+		this.type = "Restaurant";
   }
 }
 
@@ -46,18 +47,21 @@ class College extends Location{
         this.cost = cost;
         this.costAfterAid = costAfterAid;
         this.gradRate = gradRate;
-        this.acceptanceRate = acceptanceRate;
+		this.acceptanceRate = acceptanceRate;
+		this.type = "College";
   }
 }
 
 class Brewery extends Location{
-    constructor(id, name, location, hours, sizeType, openToPublic, description, icon) {
+    constructor(id, name, location, hours, sizeType, openToPublic, description, icon, website) {
         super(id, name, location, hours);
 
         this.sizeType = sizeType;
         this.openToPublic = openToPublic;
 		this.description = description;
 		this.icon = `<img src="${icon}">` || '';
+		this.website = website;
+		this.type = "Brewery";
     }
 }
 
@@ -248,7 +252,8 @@ breweries.map(brew => {
 		brew.locationTypeDisplay,
 		brew.openToPublic,
 		brew.brewery.description,
-		brew.brewery.hasOwnProperty('images') ? brew.brewery.images.icon : ''
+		brew.brewery.hasOwnProperty('images') ? brew.brewery.images.icon : '',
+		brew.brewery.hasOwnProperty('website') ? brew.brewery.website : ''
 		);
 
 		places.push(brewLocation);
@@ -458,6 +463,7 @@ function populateListResults(places){
 	$(root).empty();
 	places.map(place => {
 			let result = document.createElement("li");
+
 			result.innerHTML = `<strong>${place.name}</strong>
 								<br><p>${place.type}`;
 
