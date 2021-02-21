@@ -1,0 +1,122 @@
+#map {
+	height: 100vh;
+	width: 100%;
+}
+
+.button {
+	z-index: 100000;
+	position: relative;
+	background-color: #f542bf;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+	float: right;
+}
+
+.dropdown {
+  position: relative;
+	float: right;
+	display: inline-block;
+	z-index: 100000;
+}
+
+.dropbutton {
+	z-index: 100000;
+	background-color: #f542bf;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+	overflow: auto;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 100000;
+}
+
+
+.dropdown-content p:hover{
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.dropdown-content p {
+  color: black;
+  padding: 12px 16px;
+	font-size: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.resultList {
+	z-index: 100000;
+	width: 25%;
+	bottom: 0px;
+  left: 0px;
+  right: 20px;
+	top: 20px;
+	position: relative;
+}
+
+
+.resultList #heading {
+	background-color: #f542bf;
+	z-index: 100001;
+	color: white;
+	position: relative;
+	text-align: center;
+	position: -webkit-sticky;
+  position: sticky;
+	font-size: 18px; 
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.results {
+	position: relative;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+	text-decoration: none;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	height: 100vh;
+}
+
+.results li {
+	border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+
+}
+
+.results li:hover {
+	background-color: #ddd;
+}
+
