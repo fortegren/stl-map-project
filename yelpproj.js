@@ -312,7 +312,7 @@ $(document).ready(function(){
 		setTimeout(function () {
 			selectedLocationObjects[0].markerID.openPopup()
 		}, 0);
-	})
+	});
 
 
 	$(".filters").click( function(){
@@ -461,6 +461,7 @@ function showFilteredPlaces(filteredPlaces){
 function populateListResults(places){	
 	let root = document.getElementById("result-list");
 	$(root).empty();
+
 	places.map(place => {
 			let result = document.createElement("li");
 
